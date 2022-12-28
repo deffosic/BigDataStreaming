@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - 1433:1433
+    volumes:
+      - ./data:/var/lib/mssqlql/data
+      #- ./data:/var/opt/sqlserver/data
+      #- ./log:/var/opt/sqlserver/log
+      #- ./backup:/var/opt/sqlserver/backup
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Makeda18!
+      #- MSSQL_DATA_DIR=/var/opt/sqlserver/data
+      #- MSSQL_LOG_DIR=/var/opt/sqlserver/log
+      #- MSSQL_BACKUP_DIR=/var/opt/sqlserver/backup
